@@ -5,6 +5,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// 模板类，2d向量，用法是Vec2<int> Vec2<float>
 template <class t> struct Vec2 {
 	union {
 		struct { t u, v; };
@@ -19,6 +20,7 @@ template <class t> struct Vec2 {
 	template <class > friend std::ostream& operator<<(std::ostream& s, Vec2<t>& v);
 };
 
+// 模板类，3d向量，用法是Vec3<int>(3d整形向量)、Vec3<float>(3d浮点数向量)
 template <class t> struct Vec3 {
 	union {
 		struct { t x, y, z; };
@@ -37,6 +39,7 @@ template <class t> struct Vec3 {
 	template <class > friend std::ostream& operator<<(std::ostream& s, Vec3<t>& v);
 };
 
+// 常用模板特化，重命名
 typedef Vec2<float> Vec2f;
 typedef Vec2<int>   Vec2i;
 typedef Vec3<float> Vec3f;

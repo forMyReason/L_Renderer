@@ -1,21 +1,25 @@
-#include <iostream>
+#include <iostream>     // 输入输出流
 #include <string>
-#include <fstream>
-#include <sstream>
+#include <fstream>      // 文件流操作
+#include <sstream>      // 字符串流操作
 #include <vector>
 #include "model.h"
 
+///////////////////////////////////////////////////////////
+//////           用于从obj读取模型数据               ////////
+///////////////////////////////////////////////////////////
+
 // 构造函数
-// 接收一个指向const char的指针作为参数，即模型的名称
-Model::Model(const char* filename) : verts_(), faces_() {       // 初始化
-    std::ifstream in;       // ifstream 用于从文件中读取数据
-    in.open(filename, std::ifstream::in);       // 打开，以供读取
-    if (in.fail()) return;
-    std::string line;       // 用于存储每一行的数据
+Model::Model(const char* filename) : verts_(), faces_()     // 初始化值
+{
+    std::ifstream in;
+    in.open(filename, std::ifstream::in);
+    if (in.fail())
+        return;
+    std::string line;
     while (!in.eof()) {
         std::getline(in, line);
         std::istringstream iss(line.c_str());
-        // 将读入的对象转为istringstream，方便流式读取
         char trash;
         if (!line.compare(0, 2, "v ")) {
             iss >> trash;
