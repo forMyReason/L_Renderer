@@ -35,6 +35,9 @@
     <ClInclude Include="model.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="tgaimage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
